@@ -41,8 +41,8 @@ function clean(input: string): ReturnType<typeof strings.cleanUnicode> {
     .replace(/[ /\\-]+/g, '/')
     // remove optional slash between first letter and county digits
     .replace(/^([A-Z])\//, '$1')
-    // normalize country to 2 digits
-    .replace(/([A-Z])(\d)\//, '$10$2')
+    // normalize county to 2 digits
+    .replace(/^([A-Z])(\d)\//, '$10$2/')
     // clean full dates
     .replace(/\/\d{2}[.]\d{2}[.](\d{4})$/, '/$1');
 
